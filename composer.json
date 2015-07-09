@@ -1,5 +1,5 @@
 {
-    "name": "infi/push-notifier",
+    "name": "infi-nl/push-notifier",
     "description": "Send push notifications from PHP to multiple device types",
     "license": "MIT",
     "authors": [
