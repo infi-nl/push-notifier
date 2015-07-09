@@ -1,0 +1,20 @@
+{
+    "name": "infi/push-notifier",
+    "description": "Send push notifications from PHP to multiple device types",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ely Deckers",
+            "email": "ely.deckers@infi.nl"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Infi\\PushNotifier\\": "."
+        }
+    }
+}
