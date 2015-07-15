@@ -11,4 +11,8 @@ class FeedbackResponse implements IResponse {
   public function getTokens() {
     return $this->_tokens;
   }
+
+  public function isSuccessful() {
+    return true;
+  }
 }
