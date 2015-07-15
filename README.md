@@ -50,3 +50,17 @@ $message->registrationIds = array("<registrationId 1>", "<registrationId 2>", ..
 
 $pushNotifier->push($message);
 ```
+
+## APN Feedback Service ##
+
+Fetch information on failed APN notifications
+```php
+$feedbackService = new ApnFeedback(ApnFeedbackEndpoint::SANDBOX, '<path-to-pem-file>');
+
+$feedbackService->get();
+```
+
+
+
+
+
