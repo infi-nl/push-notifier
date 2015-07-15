@@ -3,6 +3,7 @@ namespace Infi\PushNotifier\Pusher;
 
 use Infi\PushNotifier\Message\IMessage;
 use Infi\PushNotifier\Message\ApnMessage;
+use Infi\PushNotifier\Response\GenericResponse;
 
 class ApnPusher implements IPusherStrategy {
     private $_pushEndpoint;
@@ -25,7 +26,7 @@ class ApnPusher implements IPusherStrategy {
 
     /**
      * @param ApnMessage $message
-     * @return bool
+     * @return IResponse
      * @throws \Exception
      */
     public function push(ApnMessage $message) {
@@ -61,6 +62,8 @@ class ApnPusher implements IPusherStrategy {
 
       fclose($fp);
 
-      return !!$result;
+      $response = new GenericResponse(!!$result);
+      
+      return $response;
     }
 }

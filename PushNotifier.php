@@ -13,12 +13,16 @@ class PushNotifier
     $this->_strategies = $strategies;
   }
 
+  /**
+   * @param IMessage $message
+   * @return IResponse
+   * @throws \Exception
+   */
   public function push(IMessage $message)
   {
     foreach ($this->_strategies as $strategy) {
       if ($strategy->canSendMessage($message)) {
-          $strategy->push($message);
-          return;
+        return $strategy->push($message);
       }
     }
 

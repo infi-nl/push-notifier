@@ -25,3 +25,26 @@ $message->deviceToken = "<device token>";
 
 $pushNotifier->push($message);
 ```
+
+## Google Cloud Messaging example ##
+
+```php
+$pushNotifier = new PushNotifier(
+  new PusherStrategyCollection(array(
+      new GcmPusher(
+        'https://android.googleapis.com/gcm/send',
+        '<api-key>'
+      )
+  ))
+);
+```
+
+Sending a Google Cloud Message
+```php
+$message                  = new GcmMessage();
+$message->message         = "<my message>";
+$message->title           = "<my title>";
+$message->registrationIds = array("registrationId 1", "registrationId 2", ... , "registrationId n");
+
+$pushNotifier->push($message);
+```
