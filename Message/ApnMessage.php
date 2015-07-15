@@ -7,4 +7,6 @@ class ApnMessage implements IMessage {
   public $sound;
   public $actionLocKey;
   public $deviceToken;
+  
+  public $custom = array();
 }

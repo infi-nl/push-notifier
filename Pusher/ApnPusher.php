@@ -53,10 +53,12 @@ class ApnPusher implements IPusherStrategy {
           "sound" => $message->sound,
       );
 
-      $payload = json_encode($body);
+      $payload = array_merge($body, $message->custom)
+
+      $payloadJson = json_encode($payload);
 
       // Build the binary notification
-      $msg = chr(0) . pack("n", 32) . pack("H*", $message->deviceToken) . pack("n", strlen($payload)) . $payload;
+      $msg = chr(0) . pack("n", 32) . pack("H*", $message->deviceToken) . pack("n", strlen($payloadJson)) . $payload;
 
       $result = fwrite($fp, $msg, strlen($msg));
 
