@@ -44,7 +44,7 @@ Sending a Google Cloud Message
 $message                  = new GcmMessage();
 $message->message         = "<my message>";
 $message->title           = "<my title>";
-$message->registrationIds = array("registrationId 1", "registrationId 2", ... , "registrationId n");
+$message->registrationIds = array("<registrationId 1>", "<registrationId 2>", ... , "<registrationId n>");
 
 $pushNotifier->push($message);
 ```
