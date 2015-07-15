@@ -28,6 +28,8 @@ $pushNotifier->push($message);
 
 ## Google Cloud Messaging example ##
 
+Prepare the PushNotifier for sending Google Cloud Messages.
+
 ```php
 $pushNotifier = new PushNotifier(
   new PusherStrategyCollection(array(
